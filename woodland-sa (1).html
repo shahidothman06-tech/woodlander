@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Woodland – Saudi Arabia | وودلاند السعودية</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Barlow:wght@300;400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0d0d0b;
+  --sand:#c8a96e;
+  --sand-light:#e8d5a8;
+  --sand-pale:#f5edd8;
+  --cream:#faf6ee;
+  --dark:#1a1a16;
+  --mid:#2e2d28;
+  --text:#f0ece0;
+  --text-muted:#9a9585;
+  --green:#4a6741;
+  --green-light:#6b8f60;
+  --red:#c0392b;
+  --border:#3a3830;
+  --card:#1e1e1a;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+body.rtl{direction:rtl;font-family:'Scheherazade New','Barlow',sans-serif;}
+
+/* === TOPBAR === */
+.topbar{background:var(--sand);color:var(--dark);text-align:center;padding:8px 20px;font-size:13px;font-weight:600;letter-spacing:1px;}
+.topbar span{opacity:.8;margin:0 10px;}
+
+/* === HEADER === */
+header{position:sticky;top:0;z-index:999;background:rgba(13,13,11,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 30px;gap:20px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo img{height:44px;filter:brightness(0) invert(1);}
+.logo-text{font-family:'Playfair Display',serif;font-size:22px;color:var(--sand);letter-spacing:2px;}
+nav{display:flex;gap:6px;align-items:center;}
+nav a{color:var(--text);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:4px;transition:.2s;letter-spacing:.5px;position:relative;}
+nav a:hover,nav a.active{color:var(--sand);}
+nav a::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:0;height:2px;background:var(--sand);transition:.3s;}
+nav a:hover::after,nav a.active::after{width:60%;}
+.nav-sale{color:var(--red)!important;}
+.header-actions{display:flex;align-items:center;gap:16px;}
+.lang-toggle{background:var(--mid);border:1px solid var(--border);color:var(--text);padding:7px 14px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:600;transition:.2s;display:flex;align-items:center;gap:6px;}
+.lang-toggle:hover{border-color:var(--sand);color:var(--sand);}
+.currency-badge{background:var(--sand);color:var(--dark);padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;letter-spacing:.5px;}
+.icon-btn{background:none;border:none;color:var(--text);cursor:pointer;font-size:20px;padding:6px;transition:.2s;position:relative;}
+.icon-btn:hover{color:var(--sand);}
+.cart-count{position:absolute;top:0;right:0;background:var(--red);color:#fff;border-radius:50%;width:16px;height:16px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+
+/* === HERO BANNER === */
+.hero{position:relative;height:90vh;min-height:560px;overflow:hidden;display:flex;align-items:center;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0d0d0b 0%,#1a1a10 40%,#0d1408 100%);}
+.hero-overlay{position:absolute;inset:0;background:url('https://assets.woodland.social/new_woodland/landing/carousel_banner_1.webp') center/cover no-repeat;opacity:.35;}
+.hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;}
+.hero-content{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:0 30px;width:100%;}
+.hero-badge{display:inline-block;background:var(--sand);color:var(--dark);padding:6px 18px;border-radius:2px;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,90px);line-height:1.05;color:var(--cream);margin-bottom:16px;}
+.hero h1 em{color:var(--sand);font-style:normal;}
+.hero-sub{font-size:18px;color:var(--text-muted);max-width:480px;line-height:1.6;margin-bottom:36px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{background:var(--sand);color:var(--dark);padding:14px 32px;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;border-radius:3px;text-decoration:none;transition:.2s;display:inline-block;}
+.btn-primary:hover{background:var(--sand-light);transform:translateY(-2px);}
+.btn-outline{border:2px solid var(--sand);color:var(--sand);padding:13px 32px;font-weight:600;font-size:14px;letter-spacing:1px;text-transform:uppercase;background:transparent;cursor:pointer;border-radius:3px;text-decoration:none;transition:.2s;display:inline-block;}
+.btn-outline:hover{background:var(--sand);color:var(--dark);}
+.hero-stats{position:absolute;bottom:40px;right:30px;z-index:2;display:flex;gap:40px;}
+.stat{text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;color:var(--sand);font-weight:700;}
+.stat-label{font-size:11px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;}
+
+/* === QUICK CATEGORIES === */
+.quick-cats{background:var(--dark);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.quick-cats::-webkit-scrollbar{display:none;}
+.quick-inner{display:flex;align-items:stretch;max-width:1400px;margin:0 auto;}
+.qcat{flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:18px 10px;text-decoration:none;color:var(--text-muted);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-right:1px solid var(--border);transition:.2s;text-align:center;}
+.qcat:last-child{border-right:none;}
+.qcat:hover,.qcat.active{color:var(--sand);background:rgba(200,169,110,.06);}
+.qcat-icon{font-size:22px;}
+.qcat-badge{background:var(--red);color:#fff;font-size:9px;padding:2px 6px;border-radius:10px;font-weight:700;letter-spacing:.5px;}
+
+/* === SECTION COMMON === */
+section{padding:80px 30px;}
+.sec-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;max-width:1400px;margin-left:auto;margin-right:auto;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);color:var(--cream);}
+.sec-title span{color:var(--sand);}
+.sec-sub{font-size:14px;color:var(--text-muted);margin-top:6px;letter-spacing:.5px;}
+.see-all{color:var(--sand);text-decoration:none;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--sand);padding-bottom:2px;white-space:nowrap;transition:.2s;}
+.see-all:hover{color:var(--sand-light);}
+
+/* === PRODUCT GRID === */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;max-width:1400px;margin:0 auto;}
+.product-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:.3s;cursor:pointer;position:relative;}
+.product-card:hover{transform:translateY(-6px);border-color:var(--sand);box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.prod-img-wrap{position:relative;aspect-ratio:1;overflow:hidden;background:var(--mid);}
+.prod-img-wrap img{width:100%;height:100%;object-fit:cover;transition:.4s;}
+.product-card:hover .prod-img-wrap img{transform:scale(1.06);}
+.prod-badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:2px;letter-spacing:1px;z-index:2;}
+.prod-badge.new{background:var(--green);}
+.prod-badge.excl{background:var(--sand);color:var(--dark);}
+.prod-wish{position:absolute;top:12px;right:12px;background:rgba(13,13,11,.7);border:none;color:var(--text-muted);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:2;}
+.prod-wish:hover,.prod-wish.active{color:#e74c3c;}
+.prod-info{padding:16px;}
+.prod-brand{font-size:10px;color:var(--sand);font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.prod-name{font-size:15px;font-weight:500;color:var(--cream);line-height:1.3;margin-bottom:10px;}
+.prod-name-ar{font-family:'Scheherazade New',serif;font-size:14px;color:var(--text-muted);margin-bottom:10px;display:none;}
+.prod-footer{display:flex;align-items:center;justify-content:space-between;}
+.prod-price{display:flex;flex-direction:column;}
+.price-now{font-size:18px;font-weight:700;color:var(--sand);}
+.price-was{font-size:13px;color:var(--text-muted);text-decoration:line-through;}
+.price-sar{font-size:11px;color:var(--text-muted);font-weight:500;}
+.add-btn{background:var(--sand);color:var(--dark);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:.2s;}
+.add-btn:hover{background:var(--sand-light);transform:scale(1.1);}
+
+/* === BANNER STRIP === */
+.banner-strip{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);padding:60px 30px;text-align:center;position:relative;overflow:hidden;}
+.banner-strip::before{content:'';position:absolute;inset:0;background:url('https://assets.woodland.social/new_woodland/landing/adventure.webp') center/cover;opacity:.15;}
+.banner-strip-inner{position:relative;z-index:2;}
+.banner-strip h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,52px);color:#fff;margin-bottom:14px;}
+.banner-strip p{font-size:16px;color:rgba(255,255,255,.8);margin-bottom:28px;}
+
+/* === CATEGORY CARDS === */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;max-width:1400px;margin:0 auto;}
+.cat-card{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:.85;cursor:pointer;}
+.cat-card img{width:100%;height:100%;object-fit:cover;transition:.4s;}
+.cat-card:hover img{transform:scale(1.08);}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,transparent 55%);}
+.cat-label{position:absolute;bottom:0;left:0;right:0;padding:20px 18px;}
+.cat-label h3{font-family:'Playfair Display',serif;font-size:20px;color:#fff;margin-bottom:4px;}
+.cat-label p{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:1px;}
+.cat-label-ar{font-family:'Scheherazade New',serif;font-size:16px;color:rgba(255,255,255,.7);display:none;}
+
+/* === FEATURES === */
+.features{background:var(--dark);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.features-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;}
+.feature{display:flex;align-items:center;gap:16px;padding:36px 30px;border-right:1px solid var(--border);}
+.feature:last-child{border-right:none;}
+.feat-icon{font-size:28px;}
+.feat-title{font-size:14px;font-weight:700;color:var(--cream);margin-bottom:4px;}
+.feat-desc{font-size:12px;color:var(--text-muted);line-height:1.5;}
+
+/* === NEWSLETTER === */
+.newsletter{background:var(--mid);text-align:center;}
+.newsletter h2{font-family:'Playfair Display',serif;font-size:36px;color:var(--cream);margin-bottom:10px;}
+.newsletter p{color:var(--text-muted);margin-bottom:28px;}
+.newsletter-form{display:flex;gap:12px;max-width:480px;margin:0 auto;justify-content:center;}
+.newsletter-form input{flex:1;background:var(--card);border:1px solid var(--border);color:var(--text);padding:14px 18px;border-radius:4px;font-size:14px;outline:none;transition:.2s;}
+.newsletter-form input:focus{border-color:var(--sand);}
+.newsletter-form input::placeholder{color:var(--text-muted);}
+
+/* === FOOTER === */
+footer{background:var(--dark);border-top:1px solid var(--border);padding:60px 30px 30px;}
+.footer-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px;}
+.footer-brand .logo-text{font-family:'Playfair Display',serif;font-size:24px;color:var(--sand);}
+.footer-brand p{font-size:13px;color:var(--text-muted);line-height:1.7;margin-top:14px;max-width:260px;}
+.footer-brand-ar{font-family:'Scheherazade New',serif;font-size:13px;color:var(--text-muted);display:none;line-height:1.8;margin-top:6px;}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--sand);margin-bottom:20px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:.2s;}
+.footer-col ul li a:hover{color:var(--sand);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+.social-links{display:flex;gap:14px;}
+.social-links a{color:var(--text-muted);font-size:18px;transition:.2s;text-decoration:none;}
+.social-links a:hover{color:var(--sand);}
+.payment-icons{display:flex;gap:10px;align-items:center;}
+.pay-badge{background:var(--mid);border:1px solid var(--border);padding:4px 10px;border-radius:4px;font-size:11px;color:var(--text-muted);font-weight:600;}
+
+/* === CART DRAWER === */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:2000;opacity:0;pointer-events:none;transition:.3s;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-drawer{position:fixed;top:0;right:-420px;width:420px;max-width:100vw;height:100vh;background:var(--card);z-index:2001;transition:.3s;display:flex;flex-direction:column;border-left:1px solid var(--border);}
+.cart-drawer.open{right:0;}
+.cart-head{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
+.cart-head h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);}
+.cart-close{background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;}
+.cart-items{flex:1;overflow-y:auto;padding:20px 24px;}
+.cart-empty{text-align:center;padding:60px 0;color:var(--text-muted);}
+.cart-empty p{margin-top:12px;}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.cart-item-img{width:70px;height:70px;border-radius:4px;object-fit:cover;background:var(--mid);}
+.cart-item-info{flex:1;}
+.cart-item-name{font-size:14px;font-weight:500;color:var(--cream);margin-bottom:4px;}
+.cart-item-price{font-size:15px;font-weight:700;color:var(--sand);}
+.cart-item-qty{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.qty-btn{background:var(--mid);border:1px solid var(--border);color:var(--text);width:26px;height:26px;border-radius:4px;cursor:pointer;font-size:14px;font-weight:700;}
+.qty-num{font-size:14px;color:var(--cream);}
+.cart-footer{padding:20px 24px;border-top:1px solid var(--border);}
+.cart-total{display:flex;justify-content:space-between;font-size:16px;font-weight:700;color:var(--cream);margin-bottom:16px;}
+.cart-total span:last-child{color:var(--sand);}
+
+/* === TOAST === */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:#fff;padding:14px 28px;border-radius:6px;font-size:14px;font-weight:600;z-index:3000;transition:.3s;opacity:0;white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* === SEARCH BAR === */
+.search-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1999;display:flex;align-items:flex-start;justify-content:center;padding-top:100px;opacity:0;pointer-events:none;transition:.3s;}
+.search-overlay.open{opacity:1;pointer-events:all;}
+.search-box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0;width:600px;max-width:90vw;overflow:hidden;}
+.search-input-wrap{display:flex;align-items:center;padding:18px 20px;border-bottom:1px solid var(--border);}
+.search-input-wrap input{flex:1;background:none;border:none;outline:none;color:var(--text);font-size:18px;}
+.search-input-wrap input::placeholder{color:var(--text-muted);}
+.search-results{padding:12px;}
+.search-result-item{display:flex;align-items:center;gap:14px;padding:12px;border-radius:6px;cursor:pointer;transition:.15s;}
+.search-result-item:hover{background:var(--mid);}
+.search-result-img{width:44px;height:44px;border-radius:4px;object-fit:cover;background:var(--mid);}
+.search-result-name{font-size:14px;color:var(--cream);}
+.search-result-price{font-size:13px;color:var(--sand);font-weight:700;}
+
+/* === RTL ADJUSTMENTS === */
+body.rtl .cart-drawer{right:auto;left:-420px;}
+body.rtl .cart-drawer.open{left:0;right:auto;}
+body.rtl .prod-badge{left:auto;right:12px;}
+body.rtl .prod-wish{right:auto;left:12px;}
+body.rtl .feature{border-right:none;border-left:1px solid var(--border);}
+body.rtl .feature:last-child{border-left:none;}
+body.rtl .prod-name-ar{display:block;}
+body.rtl .prod-name{display:none;}
+body.rtl .cat-label-ar{display:block;}
+body.rtl .footer-brand-ar{display:block;}
+body.rtl .price-sar{direction:ltr;text-align:right;}
+body.rtl nav a{letter-spacing:0;}
+
+/* responsive */
+@media(max-width:1024px){.footer-inner{grid-template-columns:1fr 1fr;}.hero-stats{display:none;}}
+@media(max-width:768px){.header-inner{padding:12px 16px;} nav{display:none;} section{padding:50px 16px;} .cat-grid{grid-template-columns:repeat(2,1fr);} .features-inner{grid-template-columns:1fr 1fr;} .footer-inner{grid-template-columns:1fr;gap:30px;} .newsletter-form{flex-direction:column;}}
+</style>
+</head>
+<body id="body">
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span id="tb-txt">🌿 Free Shipping on Orders Over 200 SAR &nbsp;|&nbsp; Authorized Saudi Arabia Store &nbsp;|&nbsp; Ramadan Special Offers</span>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo" style="text-decoration:none;display:flex;align-items:center;gap:10px;">
+      <svg width="46" height="46" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" rx="12" fill="#1e4d1a"/>
+        <ellipse cx="50" cy="56" rx="22" ry="9" fill="white"/>
+        <ellipse cx="50" cy="48" rx="18" ry="9" fill="white"/>
+        <ellipse cx="50" cy="40" rx="14" ry="8" fill="white"/>
+        <ellipse cx="50" cy="32" rx="10" ry="7" fill="white"/>
+        <ellipse cx="50" cy="25" rx="6.5" ry="6" fill="white"/>
+        <rect x="46" y="62" width="8" height="18" rx="3" fill="white"/>
+        <ellipse cx="50" cy="79" rx="10" ry="3" fill="white"/>
+        <path d="M46 72 Q38 77 32 78" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+        <path d="M54 72 Q62 77 68 78" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+      <span style="font-family:'Playfair Display',serif;font-size:20px;color:#c8a96e;letter-spacing:2px;font-weight:700;">WOODLAND</span>
+    </a>
+    <nav>
+      <a href="#" class="active" id="nav-home">Home</a>
+      <a href="#men" id="nav-men">Men</a>
+      <a href="#women" id="nav-women">Women</a>
+      <a href="#" id="nav-woods">Woods</a>
+      <a href="#" class="nav-sale" id="nav-sale">Sale</a>
+      <a href="#" id="nav-excl">Exclusive</a>
+    </nav>
+    <div class="header-actions">
+      <div class="currency-badge">SAR 🇸🇦</div>
+      <button class="lang-toggle" onclick="toggleLang()" id="lang-btn">🌐 العربية</button>
+      <button class="icon-btn" onclick="openSearch()" title="Search">🔍</button>
+      <button class="icon-btn" title="Wishlist">♡</button>
+      <button class="icon-btn" onclick="openCart()" title="Cart" style="position:relative">
+        🛍
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <div class="hero-badge" id="hero-badge">NEW COLLECTION 2025</div>
+    <h1 id="hero-h1">Conquer Every<br/><em>Adventure</em></h1>
+    <p class="hero-sub" id="hero-sub">Premium outdoor footwear and apparel crafted for Saudi Arabia's diverse landscapes — from desert dunes to mountain trails.</p>
+    <div class="hero-btns">
+      <a href="#men" class="btn-primary" id="hero-btn1">Shop Men</a>
+      <a href="#women" class="btn-outline" id="hero-btn2">Shop Women</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label" id="stat1">Years of Trust</div></div>
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label" id="stat2">Products</div></div>
+    <div class="stat"><div class="stat-num">2M+</div><div class="stat-label" id="stat3">Customers</div></div>
+  </div>
+</section>
+
+<!-- QUICK CATEGORIES -->
+<div class="quick-cats">
+  <div class="quick-inner">
+    <a href="#" class="qcat active"><span class="qcat-icon">🥾</span><span id="qc1">Boots</span></a>
+    <a href="#" class="qcat"><span class="qcat-icon">👟</span><span id="qc2">Sneakers</span></a>
+    <a href="#" class="qcat"><span class="qcat-icon">🧥</span><span id="qc3">Jackets</span></a>
+    <a href="#" class="qcat"><span class="qcat-icon">👕</span><span id="qc4">Shirts</span></a>
+    <a href="#" class="qcat"><span class="qcat-icon">🎒</span><span id="qc5">Backpacks</span></a>
+    <a href="#" class="qcat"><span class="qcat-icon">🏕️</span><span id="qc6">Camping</span></a>
+    <a href="#" class="qcat"><span class="qcat-icon">🔥</span><span class="qcat-badge">50%</span>&nbsp;<span id="qc7">Deals</span></a>
+  </div>
+</div>
+
+<!-- MEN SECTION -->
+<section id="men" style="background:var(--bg)">
+  <div class="sec-header">
+    <div><h2 class="sec-title" id="sec-men">Men's <span>Collection</span></h2><p class="sec-sub" id="sec-men-sub">Explore rugged boots, apparel & more</p></div>
+    <a href="#" class="see-all" id="sa-men">See All →</a>
+  </div>
+  <div class="product-grid" id="men-grid"></div>
+</section>
+
+<!-- BANNER STRIP -->
+<div class="banner-strip">
+  <div class="banner-strip-inner">
+    <h2 id="bs-h">Your Everyday Adventure Starts Here</h2>
+    <p id="bs-p">Built for Saudi terrain. Trusted by explorers for over 50 years.</p>
+    <a href="#" class="btn-primary" id="bs-btn">Explore New Arrivals</a>
+  </div>
+</div>
+
+<!-- WOMEN SECTION -->
+<section id="women" style="background:var(--dark)">
+  <div class="sec-header">
+    <div><h2 class="sec-title" id="sec-women">Women's <span>Collection</span></h2><p class="sec-sub" id="sec-women-sub">Style meets performance for every journey</p></div>
+    <a href="#" class="see-all" id="sa-women">See All →</a>
+  </div>
+  <div class="product-grid" id="women-grid"></div>
+</section>
+
+<!-- TOP CATEGORIES VISUAL -->
+<section style="background:var(--bg)">
+  <div class="sec-header">
+    <div><h2 class="sec-title" id="sec-cats">Top <span>Categories</span></h2></div>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card" onclick="filterCat('boots')">
+      <img src="https://assets.woodland.social/new_woodland/landing/top_category_1.webp" alt="Boots"/>
+      <div class="cat-overlay"></div>
+      <div class="cat-label"><h3 id="cc1">Boots</h3><p id="cc1s">Shop Now →</p><p class="cat-label-ar">احذية الجبال</p></div>
+    </div>
+    <div class="cat-card" onclick="filterCat('shirts')">
+      <img src="https://assets.woodland.social/new_woodland/landing/top_category_2.webp" alt="Men Apparel"/>
+      <div class="cat-overlay"></div>
+      <div class="cat-label"><h3 id="cc2">Men's Apparel</h3><p id="cc2s">Shop Now →</p><p class="cat-label-ar">ملابس رجالية</p></div>
+    </div>
+    <div class="cat-card" onclick="filterCat('women')">
+      <img src="https://assets.woodland.social/new_woodland/landing/top_category_3.webp" alt="Women Apparel"/>
+      <div class="cat-overlay"></div>
+      <div class="cat-label"><h3 id="cc3">Women's Apparel</h3><p id="cc3s">Shop Now →</p><p class="cat-label-ar">ملابس نسائية</p></div>
+    </div>
+    <div class="cat-card" onclick="filterCat('sneakers')">
+      <img src="https://assets.woodland.social/new_woodland/landing/top_category_4.webp" alt="Sneakers"/>
+      <div class="cat-overlay"></div>
+      <div class="cat-label"><h3 id="cc4">Sneakers</h3><p id="cc4s">Shop Now →</p><p class="cat-label-ar">أحذية رياضية</p></div>
+    </div>
+    <div class="cat-card" onclick="filterCat('backpacks')">
+      <img src="https://assets.woodland.social/new_woodland/landing/top_category_5.webp" alt="Backpacks"/>
+      <div class="cat-overlay"></div>
+      <div class="cat-label"><h3 id="cc5">Backpacks</h3><p id="cc5s">Shop Now →</p><p class="cat-label-ar">حقائب الظهر</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="features-inner">
+    <div class="feature"><span class="feat-icon">🚚</span><div><div class="feat-title" id="ft1">Free Shipping</div><div class="feat-desc" id="fd1">On orders above 200 SAR across KSA</div></div></div>
+    <div class="feature"><span class="feat-icon">↩️</span><div><div class="feat-title" id="ft2">Easy Returns</div><div class="feat-desc" id="fd2">30-day hassle-free return policy</div></div></div>
+    <div class="feature"><span class="feat-icon">🔒</span><div><div class="feat-title" id="ft3">Secure Payment</div><div class="feat-desc" id="fd3">Mada, Visa, Mastercard & Apple Pay</div></div></div>
+    <div class="feature"><span class="feat-icon">🌿</span><div><div class="feat-title" id="ft4">Eco Certified</div><div class="feat-desc" id="fd4">Pro Planet sustainability commitment</div></div></div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2 id="nl-h">Stay in the Loop</h2>
+  <p id="nl-p">Get exclusive deals, new arrivals, and adventure inspiration.</p>
+  <div class="newsletter-form">
+    <input type="email" id="nl-input" placeholder="Your email address…"/>
+    <button class="btn-primary" onclick="subscribe()" id="nl-btn">Subscribe</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-text">WOODLAND</div>
+      <p id="fb-desc">Saudi Arabia's premier outdoor lifestyle brand. Trusted by adventurers since 1992 for quality footwear and apparel built for every terrain.</p>
+      <p class="footer-brand-ar">وودلاند – العلامة التجارية الرائدة في المملكة العربية السعودية للأحذية والملابس الخارجية.</p>
+    </div>
+    <div class="footer-col">
+      <h4 id="fc1h">Shop</h4>
+      <ul>
+        <li><a href="#" id="fcm">Men</a></li>
+        <li><a href="#" id="fcw">Women</a></li>
+        <li><a href="#" id="fcb">Boots</a></li>
+        <li><a href="#" id="fca">Apparel</a></li>
+        <li><a href="#" id="fcs">Sale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 id="fc2h">Help</h4>
+      <ul>
+        <li><a href="#" id="fch1">Track Order</a></li>
+        <li><a href="#" id="fch2">Returns</a></li>
+        <li><a href="#" id="fch3">Size Guide</a></li>
+        <li><a href="#" id="fch4">Contact Us</a></li>
+        <li><a href="#" id="fch5">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 id="fc3h">Company</h4>
+      <ul>
+        <li><a href="#" id="fcc1">About Us</a></li>
+        <li><a href="#" id="fcc2">Pro Planet</a></li>
+        <li><a href="#" id="fcc3">Careers</a></li>
+        <li><a href="#" id="fcc4">Privacy Policy</a></li>
+        <li><a href="#" id="fcc5">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy" id="copy-txt">© 2025 Woodland (Aero Club) Pvt. Ltd. | Saudi Arabia</div>
+    <div class="social-links">
+      <a href="https://instagram.com/woodlandexploremore" target="_blank">📸</a>
+      <a href="https://facebook.com/woodlandadventure" target="_blank">📘</a>
+      <a href="https://twitter.com/Woodland" target="_blank">🐦</a>
+      <a href="https://youtube.com/@woodland" target="_blank">▶️</a>
+    </div>
+    <div class="payment-icons">
+      <span class="pay-badge">Mada</span>
+      <span class="pay-badge">VISA</span>
+      <span class="pay-badge">MC</span>
+      <span class="pay-badge">Apple Pay</span>
+      <span class="pay-badge">STC Pay</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-head">
+    <h3 id="cart-title">Shopping Cart</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list">
+    <div class="cart-empty"><div style="font-size:48px">🛍</div><p id="cart-empty-txt">Your cart is empty</p></div>
+  </div>
+  <div class="cart-footer" id="cart-footer" style="display:none">
+    <div class="cart-total"><span id="ct-label">Total</span><span id="cart-total-val">0 SAR</span></div>
+    <button class="btn-primary" style="width:100%;text-align:center" id="checkout-btn">Checkout →</button>
+  </div>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="search-overlay" onclick="closeSearch(event)">
+  <div class="search-box" onclick="event.stopPropagation()">
+    <div class="search-input-wrap">
+      <span style="margin-right:12px;font-size:18px;color:var(--text-muted)">🔍</span>
+      <input type="text" id="search-input" placeholder="Search products…" oninput="doSearch(this.value)"/>
+      <button onclick="closeSearch(event)" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:20px">✕</button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===================== PRODUCT DATA ===================== */
+const PRODUCTS = [
+  // MEN BOOTS
+  {id:1,cat:'boots',gender:'men',name:'Woodland Men Trail Boot',nameAr:'حذاء ترايل للرجال',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_1.webp',priceINR:6499,discount:20,badge:'Bestseller',isNew:false},
+  {id:2,cat:'boots',gender:'men',name:'Woodland Pro Hiker GX',nameAr:'حذاء المشي برو هايكر',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/carousel_banner_1.webp',priceINR:8299,discount:0,badge:'New',isNew:true},
+  {id:3,cat:'boots',gender:'men',name:'Desert Trek Boot',nameAr:'حذاء الصحراء',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_5.webp',priceINR:5499,discount:30,badge:'Sale',isNew:false},
+  {id:4,cat:'sneakers',gender:'men',name:'Woodland Aero Runner',nameAr:'حذاء ايرو رانر',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_4.webp',priceINR:4299,discount:15,badge:'Exclusive',isNew:false},
+  // MEN APPAREL
+  {id:5,cat:'shirts',gender:'men',name:'Woodland Outdoor Shirt',nameAr:'قميص خارجي رجالي',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_2.webp',priceINR:2499,discount:0,badge:'New',isNew:true},
+  {id:6,cat:'jackets',gender:'men',name:'Woodland Trek Jacket',nameAr:'جاكيت المشي',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/carousel_banner_2.webp',priceINR:7999,discount:25,badge:'Bestseller',isNew:false},
+  {id:7,cat:'backpacks',gender:'men',name:'Adventure Backpack 35L',nameAr:'حقيبة مغامرة 35 لتر',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_5.webp',priceINR:4999,discount:0,badge:'New',isNew:true},
+  {id:8,cat:'boots',gender:'men',name:'Woodland Alpha Boot',nameAr:'حذاء ألفا',brand:'WOODS',img:'https://assets.woodland.social/new_woodland/mobile/woods.png',priceINR:9299,discount:10,badge:'Exclusive',isNew:false},
+  // WOMEN
+  {id:9,cat:'boots',gender:'women',name:"Women's Trail Boot",nameAr:'حذاء ترايل للنساء',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_3.webp',priceINR:5499,discount:20,badge:'Bestseller',isNew:false},
+  {id:10,cat:'sneakers',gender:'women',name:"Women's Aero Sneaker",nameAr:'حذاء رياضي للنساء',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_4.webp',priceINR:3799,discount:0,badge:'New',isNew:true},
+  {id:11,cat:'shirts',gender:'women',name:"Women's Adventure Top",nameAr:'توب المغامرة للنساء',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/top_category_3.webp',priceINR:1999,discount:15,badge:'Sale',isNew:false},
+  {id:12,cat:'jackets',gender:'women',name:"Women's Trekking Jacket",nameAr:'جاكيت للنساء',brand:'WOODLAND',img:'https://assets.woodland.social/new_woodland/landing/carousel_banner_2.webp',priceINR:6999,discount:30,badge:'Sale',isNew:false},
+];
+
+// SAR conversion: approx 1 INR = 0.044 SAR
+const INR_TO_SAR = 0.044;
+function toSAR(inr){return Math.round(inr * INR_TO_SAR);}
+
+/* ===================== LANGUAGE ===================== */
+let isAr = false;
+
+const TRANSLATIONS = {
+  en:{
+    topbar:'🌿 Free Shipping on Orders Over 200 SAR | Authorized Saudi Arabia Store | Ramadan Special Offers',
+    langBtn:'🌐 العربية',
+    navHome:'Home',navMen:'Men',navWomen:'Women',navWoods:'Woods',navSale:'Sale',navExcl:'Exclusive',
+    heroBadge:'NEW COLLECTION 2025',
+    heroH:'Conquer Every<br/><em>Adventure</em>',
+    heroSub:"Premium outdoor footwear and apparel crafted for Saudi Arabia's diverse landscapes — from desert dunes to mountain trails.",
+    heroBtn1:'Shop Men',heroBtn2:'Shop Women',
+    stat1:'Years of Trust',stat2:'Products',stat3:'Customers',
+    qc1:'Boots',qc2:'Sneakers',qc3:'Jackets',qc4:'Shirts',qc5:'Backpacks',qc6:'Camping',qc7:'Deals',
+    secMen:"Men's Collection",secMenSub:'Explore rugged boots, apparel & more',saMen:'See All →',
+    bsH:'Your Everyday Adventure Starts Here',bsP:'Built for Saudi terrain. Trusted by explorers for over 50 years.',bsBtn:'Explore New Arrivals',
+    secWomen:"Women's Collection",secWomenSub:'Style meets performance for every journey',saWomen:'See All →',
+    secCats:'Top Categories',
+    cc1:'Boots',cc1s:'Shop Now →',cc2:"Men's Apparel",cc2s:'Shop Now →',cc3:"Women's Apparel",cc3s:'Shop Now →',cc4:'Sneakers',cc4s:'Shop Now →',cc5:'Backpacks',cc5s:'Shop Now →',
+    ft1:'Free Shipping',fd1:'On orders above 200 SAR across KSA',
+    ft2:'Easy Returns',fd2:'30-day hassle-free return policy',
+    ft3:'Secure Payment',fd3:'Mada, Visa, Mastercard & Apple Pay',
+    ft4:'Eco Certified',fd4:'Pro Planet sustainability commitment',
+    nlH:'Stay in the Loop',nlP:'Get exclusive deals, new arrivals, and adventure inspiration.',nlInput:'Your email address…',nlBtn:'Subscribe',
+    fc1h:'Shop',fcm:'Men',fcw:'Women',fcb:'Boots',fca:'Apparel',fcs:'Sale',
+    fc2h:'Help',fch1:'Track Order',fch2:'Returns',fch3:'Size Guide',fch4:'Contact Us',fch5:'FAQs',
+    fc3h:'Company',fcc1:'About Us',fcc2:'Pro Planet',fcc3:'Careers',fcc4:'Privacy Policy',fcc5:'Terms of Service',
+    fbDesc:"Saudi Arabia's premier outdoor lifestyle brand. Trusted by adventurers since 1992.",
+    copyTxt:'© 2025 Woodland (Aero Club) Pvt. Ltd. | Saudi Arabia',
+    cartTitle:'Shopping Cart',cartEmpty:'Your cart is empty',ctLabel:'Total',checkoutBtn:'Checkout →',
+    addedTxt:'Added to cart!',sarLabel:'SAR',
+    searchPlaceholder:'Search products…',
+  },
+  ar:{
+    topbar:'🌿 شحن مجاني للطلبات فوق 200 ريال | المتجر الرسمي للمملكة العربية السعودية | عروض رمضان',
+    langBtn:'🌐 English',
+    navHome:'الرئيسية',navMen:'رجال',navWomen:'نساء',navWoods:'وودز',navSale:'تخفيضات',navExcl:'حصري',
+    heroBadge:'مجموعة 2025 الجديدة',
+    heroH:'اغزُ كل<br/><em>مغامرة</em>',
+    heroSub:'أحذية وملابس خارجية فاخرة مصممة لتضاريس المملكة العربية السعودية — من الكثبان الرملية إلى مسارات الجبال.',
+    heroBtn1:'تسوق رجالي',heroBtn2:'تسوق نسائي',
+    stat1:'سنوات من الثقة',stat2:'منتج',stat3:'عميل',
+    qc1:'أحذية',qc2:'رياضية',qc3:'جاكيتات',qc4:'قمصان',qc5:'حقائب',qc6:'تخييم',qc7:'عروض',
+    secMen:'مجموعة الرجال',secMenSub:'استكشف الأحذية والملابس الخارجية',saMen:'عرض الكل →',
+    bsH:'مغامرتك اليومية تبدأ هنا',bsP:'مصنوع للتضاريس السعودية. موثوق به منذ أكثر من 50 عاماً.',bsBtn:'استكشف الوصول الجديد',
+    secWomen:'مجموعة النساء',secWomenSub:'الأناقة تلتقي بالأداء في كل رحلة',saWomen:'عرض الكل →',
+    secCats:'أبرز الفئات',
+    cc1:'أحذية',cc1s:'تسوق الآن →',cc2:'ملابس رجالية',cc2s:'تسوق الآن →',cc3:'ملابس نسائية',cc3s:'تسوق الآن →',cc4:'رياضية',cc4s:'تسوق الآن →',cc5:'حقائب',cc5s:'تسوق الآن →',
+    ft1:'شحن مجاني',fd1:'للطلبات فوق 200 ريال في جميع أنحاء المملكة',
+    ft2:'إرجاع سهل',fd2:'سياسة إرجاع مريحة لمدة 30 يوماً',
+    ft3:'دفع آمن',fd3:'مدى، فيزا، ماستركارد وآبل باي',
+    ft4:'معتمد بيئياً',fd4:'التزام باستدامة كوكبنا',
+    nlH:'ابقَ على تواصل',nlP:'احصل على عروض حصرية ووصولات جديدة.',nlInput:'بريدك الإلكتروني…',nlBtn:'اشترك',
+    fc1h:'تسوق',fcm:'رجال',fcw:'نساء',fcb:'أحذية',fca:'ملابس',fcs:'تخفيضات',
+    fc2h:'المساعدة',fch1:'تتبع الطلب',fch2:'الإرجاع',fch3:'دليل المقاسات',fch4:'تواصل معنا',fch5:'الأسئلة الشائعة',
+    fc3h:'الشركة',fcc1:'من نحن',fcc2:'برو بلانيت',fcc3:'وظائف',fcc4:'سياسة الخصوصية',fcc5:'الشروط والأحكام',
+    fbDesc:'العلامة التجارية الرائدة في المملكة للأحذية والملابس الخارجية. موثوق بها منذ 1992.',
+    copyTxt:'© 2025 وودلاند (إيرو كلوب) | المملكة العربية السعودية',
+    cartTitle:'سلة التسوق',cartEmpty:'سلتك فارغة',ctLabel:'المجموع',checkoutBtn:'إتمام الشراء →',
+    addedTxt:'تمت الإضافة إلى السلة!',sarLabel:'ريال',
+    searchPlaceholder:'ابحث عن منتجات…',
+  }
+};
+
+function t(key){return TRANSLATIONS[isAr?'ar':'en'][key]||key;}
+
+function applyLang(){
+  const body = document.getElementById('body');
+  if(isAr){body.classList.add('rtl');} else {body.classList.remove('rtl');}
+  document.getElementById('tb-txt').innerHTML = t('topbar');
+  document.getElementById('lang-btn').textContent = t('langBtn');
+  document.getElementById('nav-home').textContent = t('navHome');
+  document.getElementById('nav-men').textContent = t('navMen');
+  document.getElementById('nav-women').textContent = t('navWomen');
+  document.getElementById('nav-woods').textContent = t('navWoods');
+  document.getElementById('nav-sale').textContent = t('navSale');
+  document.getElementById('nav-excl').textContent = t('navExcl');
+  document.getElementById('hero-badge').textContent = t('heroBadge');
+  document.getElementById('hero-h1').innerHTML = t('heroH');
+  document.getElementById('hero-sub').textContent = t('heroSub');
+  document.getElementById('hero-btn1').textContent = t('heroBtn1');
+  document.getElementById('hero-btn2').textContent = t('heroBtn2');
+  document.getElementById('stat1').textContent = t('stat1');
+  document.getElementById('stat2').textContent = t('stat2');
+  document.getElementById('stat3').textContent = t('stat3');
+  ['qc1','qc2','qc3','qc4','qc5','qc6','qc7'].forEach(k=>document.getElementById(k).textContent=t(k));
+  document.getElementById('sec-men').innerHTML = isAr ? t('secMen') : `${t('secMen').split(' ')[0]} <span>${t('secMen').split(' ').slice(1).join(' ')}</span>`;
+  document.getElementById('sec-men').innerHTML = isAr ? t('secMen') : `Men's <span>Collection</span>`;
+  if(isAr) document.getElementById('sec-men').textContent = t('secMen');
+  document.getElementById('sec-men-sub').textContent = t('secMenSub');
+  document.getElementById('sa-men').textContent = t('saMen');
+  document.getElementById('bs-h').textContent = t('bsH');
+  document.getElementById('bs-p').textContent = t('bsP');
+  document.getElementById('bs-btn').textContent = t('bsBtn');
+  document.getElementById('sec-women').innerHTML = isAr ? t('secWomen') : `Women's <span>Collection</span>`;
+  if(isAr) document.getElementById('sec-women').textContent = t('secWomen');
+  document.getElementById('sec-women-sub').textContent = t('secWomenSub');
+  document.getElementById('sa-women').textContent = t('saWomen');
+  document.getElementById('sec-cats').innerHTML = isAr ? t('secCats') : `Top <span>Categories</span>`;
+  if(isAr) document.getElementById('sec-cats').textContent = t('secCats');
+  ['cc1','cc1s','cc2','cc2s','cc3','cc3s','cc4','cc4s','cc5','cc5s'].forEach(k=>document.getElementById(k).textContent=t(k));
+  ['ft1','fd1','ft2','fd2','ft3','fd3','ft4','fd4'].forEach(k=>document.getElementById(k).textContent=t(k));
+  document.getElementById('nl-h').textContent = t('nlH');
+  document.getElementById('nl-p').textContent = t('nlP');
+  document.getElementById('nl-input').placeholder = t('nlInput');
+  document.getElementById('nl-btn').textContent = t('nlBtn');
+  ['fc1h','fcm','fcw','fcb','fca','fcs','fc2h','fch1','fch2','fch3','fch4','fch5','fc3h','fcc1','fcc2','fcc3','fcc4','fcc5'].forEach(k=>document.getElementById(k).textContent=t(k));
+  document.getElementById('fb-desc').textContent = t('fbDesc');
+  document.getElementById('copy-txt').textContent = t('copyTxt');
+  document.getElementById('cart-title').textContent = t('cartTitle');
+  document.getElementById('cart-empty-txt').textContent = t('cartEmpty');
+  document.getElementById('ct-label').textContent = t('ctLabel');
+  document.getElementById('checkout-btn').textContent = t('checkoutBtn');
+  document.getElementById('search-input').placeholder = t('searchPlaceholder');
+  renderGrids();
+  renderCart();
+}
+
+function toggleLang(){
+  isAr = !isAr;
+  applyLang();
+}
+
+/* ===================== RENDER PRODUCTS ===================== */
+function badgeColor(b){
+  if(b==='Sale') return 'style="background:var(--red)"';
+  if(b==='New') return 'style="background:var(--green)"';
+  if(b==='Exclusive') return 'style="background:var(--sand);color:var(--dark)"';
+  return '';
+}
+
+function renderCard(p){
+  const sar = toSAR(p.priceINR);
+  const discSar = p.discount>0?Math.round(sar*(1-p.discount/100)):null;
+  const showPrice = discSar||sar;
+  const wasPrice = discSar?sar:null;
+  const name = isAr ? p.nameAr : p.name;
+  return `
+  <div class="product-card" onclick="openProduct(${p.id})">
+    <div class="prod-img-wrap">
+      <img src="${p.img}" alt="${name}" loading="lazy" onerror="this.src='https://assets.woodland.social/new_woodland/landing/top_category_1.webp'"/>
+      ${p.badge?`<div class="prod-badge" ${badgeColor(p.badge)}>${p.badge}</div>`:''}
+      <button class="prod-wish" onclick="event.stopPropagation();wishToggle(this)" title="Wishlist">♡</button>
+    </div>
+    <div class="prod-info">
+      <div class="prod-brand">${p.brand}</div>
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-name-ar">${p.nameAr}</div>
+      <div class="prod-footer">
+        <div class="prod-price">
+          <div class="price-now">${showPrice} <small class="price-sar">SAR</small></div>
+          ${wasPrice?`<div class="price-was">${wasPrice} SAR</div>`:''}
+        </div>
+        <button class="add-btn" onclick="event.stopPropagation();addToCart(${p.id})" title="Add to cart">+</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderGrids(){
+  const menProds = PRODUCTS.filter(p=>p.gender==='men');
+  const womenProds = PRODUCTS.filter(p=>p.gender==='women');
+  document.getElementById('men-grid').innerHTML = menProds.map(renderCard).join('');
+  document.getElementById('women-grid').innerHTML = womenProds.map(renderCard).join('');
+}
+
+/* ===================== CART ===================== */
+let cart = [];
+
+function addToCart(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  const existing = cart.find(x=>x.id===id);
+  if(existing){existing.qty++;}
+  else{cart.push({...p,qty:1});}
+  updateCartCount();
+  renderCart();
+  showToast(t('addedTxt'));
+}
+
+function updateCartCount(){
+  const total = cart.reduce((s,x)=>s+x.qty,0);
+  document.getElementById('cart-count').textContent = total;
+}
+
+function renderCart(){
+  const list = document.getElementById('cart-items-list');
+  const footer = document.getElementById('cart-footer');
+  if(!cart.length){
+    list.innerHTML = `<div class="cart-empty"><div style="font-size:48px">🛍</div><p id="cart-empty-txt">${t('cartEmpty')}</p></div>`;
+    footer.style.display='none';return;
+  }
+  footer.style.display='block';
+  list.innerHTML = cart.map(p=>{
+    const sar = toSAR(p.priceINR);
+    const price = p.discount>0?Math.round(sar*(1-p.discount/100)):sar;
+    return `<div class="cart-item">
+      <img class="cart-item-img" src="${p.img}" alt="${p.name}" onerror="this.src='https://assets.woodland.social/new_woodland/landing/top_category_1.webp'"/>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${isAr?p.nameAr:p.name}</div>
+        <div class="cart-item-price">${price*p.qty} SAR</div>
+        <div class="cart-item-qty">
+          <button class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
+          <span class="qty-num">${p.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  const totalSar = cart.reduce((s,p)=>{
+    const sar=toSAR(p.priceINR);
+    return s+(p.discount>0?Math.round(sar*(1-p.discount/100)):sar)*p.qty;
+  },0);
+  document.getElementById('cart-total-val').textContent = totalSar+' SAR';
+  document.getElementById('ct-label').textContent = t('ctLabel');
+  document.getElementById('checkout-btn').textContent = t('checkoutBtn');
+}
+
+function changeQty(id,delta){
+  const idx = cart.findIndex(x=>x.id===id);
+  if(idx<0)return;
+  cart[idx].qty+=delta;
+  if(cart[idx].qty<=0)cart.splice(idx,1);
+  updateCartCount();renderCart();
+}
+
+function openCart(){
+  document.getElementById('cart-overlay').classList.add('open');
+  document.getElementById('cart-drawer').classList.add('open');
+}
+function closeCart(){
+  document.getElementById('cart-overlay').classList.remove('open');
+  document.getElementById('cart-drawer').classList.remove('open');
+}
+
+/* ===================== SEARCH ===================== */
+function openSearch(){
+  document.getElementById('search-overlay').classList.add('open');
+  setTimeout(()=>document.getElementById('search-input').focus(),200);
+}
+function closeSearch(e){
+  document.getElementById('search-overlay').classList.remove('open');
+  document.getElementById('search-results').innerHTML='';
+  document.getElementById('search-input').value='';
+}
+function doSearch(q){
+  const res = document.getElementById('search-results');
+  if(!q.trim()){res.innerHTML='';return;}
+  const found = PRODUCTS.filter(p=>p.name.toLowerCase().includes(q.toLowerCase())||p.nameAr.includes(q));
+  if(!found.length){res.innerHTML=`<div style="padding:20px;color:var(--text-muted);text-align:center">No results found</div>`;return;}
+  res.innerHTML = found.map(p=>{
+    const sar=toSAR(p.priceINR);
+    const price=p.discount>0?Math.round(sar*(1-p.discount/100)):sar;
+    return `<div class="search-result-item" onclick="closeSearch();addToCart(${p.id})">
+      <img class="search-result-img" src="${p.img}" alt="${p.name}"/>
+      <div style="flex:1"><div class="search-result-name">${isAr?p.nameAr:p.name}</div></div>
+      <div class="search-result-price">${price} SAR</div>
+    </div>`;
+  }).join('');
+}
+
+/* ===================== MISC ===================== */
+function wishToggle(btn){btn.classList.toggle('active');btn.textContent=btn.classList.contains('active')?'♥':'♡';}
+
+function openProduct(id){
+  const p = PRODUCTS.find(x=>x.id===id);
+  addToCart(id);
+}
+
+function filterCat(cat){document.querySelector('#men-grid,#women-grid').scrollIntoView({behavior:'smooth'});}
+
+function showToast(msg){
+  const t2=document.getElementById('toast');
+  t2.textContent=msg;t2.classList.add('show');
+  setTimeout(()=>t2.classList.remove('show'),2200);
+}
+
+function subscribe(){
+  const v=document.getElementById('nl-input').value;
+  if(v&&v.includes('@')){showToast('Subscribed! شكراً 🌿');document.getElementById('nl-input').value='';}
+  else{showToast('Please enter a valid email');}
+}
+
+// keyboard esc
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSearch();closeCart();}});
+
+// Init
+renderGrids();
+</script>
+</body>
+</html>
